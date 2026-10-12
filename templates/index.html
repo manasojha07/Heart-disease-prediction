@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="nav-button active" onclick="showWelcome()">Home</button>
+            <button class="nav-button" onclick="showInfo()">Heart Disease Information</button>
+            <button class="nav-button" onclick="showProtect()">Protect Your Heart</button>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section" id="welcomeSection">
+        <h1 class="welcome-message">Welcome To Heart Disease Risk Predictor</h1>
+        <div class="button-group">
+            <button class="cta-button primary" onclick="showForm()">Get Started</button>
+            <button class="cta-button secondary" onclick="showKnowMore()">Know More</button>
+        </div>
+    </div>
+    <div class="info_about_proj" id="info_proj">
+        <p class="info_content">
+            <span class="line1">This predicts the risk of having</span><br>
+            <span class="line2">heart disease based on the user's input.</span>
+          </p>
+          
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section" id="formSection">
+        <h1>Health Risk Predictor</h1>
+        <div class="form-container">
+            <form action="/predict" method="POST">
+                <label>Age:</label>
+                <input type="number" name="Age" required>
+
+                <label>Gender:</label>
+                <select name="Gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label>BMI (Body Mass Index):</label>
+                <input type="number" step="0.1" name="BMI" required>
+
+                <label>Smoking:</label>
+                <select name="Smoking" required>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+
+                <label>Alcohol:</label>
+                <select name="Alcohol" required>
+                    <option value="Never">Never</option>
+                    <option value="Occasional">Occasional</option>
+                    <option value="Daily">Daily</option>
+                </select>
+
+                <label>Physical Activity:</label>
+                <select name="PhysicalActivity" required>
+                    <option value="Low">Low</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="High">High</option>
+                </select>
+
+                <label>Diet Quality:</label>
+                <select name="DietQuality" required>
+                    <option value="Poor">Poor</option>
+                    <option value="Average">Average</option>
+                    <option value="Good">Good</option>
+                </select>
+
+                <label>Sleep Hours:</label>
+                <input type="number" name="SleepHours" min="0" max="12" required>
+
+                <label>Stress Level:</label>
+                <select name="StressLevel" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <label for="bloodPressureType">Blood Pressure:</label>
+<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+    <select id="bloodPressureType" name="BloodPressureType" required style="padding: 6px 8px; border-radius: 5px; border: 1px solid #ccc;">
+        <option value="">Select Type</option>
+        <option value="Systolic">Systolic</option>
+        <option value="Diastolic">Diastolic</option>
+    </select>
+
+    <input type="number" name="BloodPressureValue" placeholder="Enter value (mmHg)" required
+        style="padding: 6px 8px; border-radius: 5px; border: 1px solid #ccc; width: 160px;">
+</div>
+
+                <!-- <label>Blood Pressure:</label>
+                <input type="number" name="BloodPressure" required> -->
+
+                <!-- <select name="BloodPressure" required> -->
+                    <!-- <option value="Low">Systolic</option>
+                    <option value="Medium">Diastolic</option>
+                </select>     -->
+
+                <label>Resting Heart Rate:</label>
+                <input type="number" name="RestingHeartRate" required>
+
+                <label>Chest Pain:</label>
+                <select name="ChestPain" required>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+
+                <label>Shortness of Breath:</label>
+                <select name="ShortnessOfBreath" required>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+
+                <label>Family History:</label>
+                <select name="FamilyHistory" required>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+
+                <button type="submit">Predict Health Risk</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Prediction Popup Modal -->
+    {% if prediction_text %}
+    <div class="modal-overlay" id="predictionModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h2>Your Heart Health Assessment</h2>
+            </div>
+            <div class="modal-body">
+                <div class="prediction-result">
+                    <h3>{{ prediction_text }}</h3>
+                </div>
+                {% if suggestion_text %}
+                <div class="suggestion-box">
+                    <h4>💡 Personalized Health Suggestions:</h4>
+                    <div class="suggestions">{{ suggestion_text|safe }}</div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            showModal();
+        });
+    </script>
+    {% endif %}
+
+    <script>
+        function showWelcome() {
+            document.getElementById('welcomeSection').style.display = 'flex';
+            document.getElementById('formSection').classList.remove('active');
+            setActiveNav(0);
+        }
+
+        function showForm() {
+            document.getElementById('welcomeSection').style.display = 'none';
+            document.getElementById('formSection').classList.add('active');
+            document.getElementById('formSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showKnowMore() {
+            // Redirect to knowmore.html page
+            window.location.href = '/knowmore';
+        }
+
+        function showInfo() {
+            // Redirect to Heart Disease Information page
+            window.location.href = '/heartdiseaseinfo';
+        }
+
+        function showProtect() {
+            // Redirect to Protect Your Heart page
+            window.location.href = '/protect';
+        }
+
+        function setActiveNav(index) {
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function showModal() {
+            const modal = document.getElementById('predictionModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('predictionModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                showForm();
+            }
+        }
+
+        // Show form if there are results
+        {% if prediction_text %}
+        showForm();
+        {% endif %}
+    </script>
+</body>
+</html>

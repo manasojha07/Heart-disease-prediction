@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know More - Heart Disease Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='knowmorestyling.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="nav-button" onclick="window.location.href='/'">Home</button>
+            <button class="nav-button" onclick="showInfo()">Heart Disease Information</button>
+            <button class="nav-button" onclick="showProtect()">Protect Your Heart</button>
+        </div>
+    </nav>
+
+    <!-- Know More Section -->
+    <div class="know-more-section">
+        <h1>Know More About Health Risk Factors</h1>
+        <div class="info-container">
+            <div class="info-card">
+                <h3>📊 Age</h3>
+                <p>Enter your current age in years. Age is a significant factor in heart disease risk assessment.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>⚥ Gender</h3>
+                <p>Select your biological gender. Risk factors and disease presentations can vary between genders.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>⚖️ BMI (Body Mass Index)</h3>
+                <p>A measure of body fat based on height and weight. Calculate it using the formula: weight (kg) / height (m)². Normal range: 18.5-24.9</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🚭 Smoking</h3>
+                <p>Smoking is a major risk factor for heart disease. It damages blood vessels and increases the risk of blood clots.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🍷 Alcohol Consumption</h3>
+                <p>Moderate alcohol consumption may have protective effects, but excessive drinking increases heart disease risk significantly.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🏃 Physical Activity</h3>
+                <p><strong>Low:</strong> Minimal exercise (less than 150 minutes/week)<br>
+                   <strong>Moderate:</strong> Regular exercise (150-300 minutes/week)<br>
+                   <strong>High:</strong> Active lifestyle (more than 300 minutes/week)</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🥗 Diet Quality</h3>
+                <p><strong>Poor:</strong> High in processed foods, sugars, and saturated fats<br>
+                   <strong>Average:</strong> Balanced but occasional unhealthy choices<br>
+                   <strong>Good:</strong> Rich in fruits, vegetables, whole grains, and lean proteins</p>
+            </div>
+
+            <div class="info-card">
+                <h3>😴 Sleep Hours</h3>
+                <p>The recommended sleep duration for adults is 7-9 hours per night. Inadequate sleep increases heart disease risk.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>😰 Stress Level</h3>
+                <p>Chronic stress can contribute to heart disease. High stress levels can lead to unhealthy coping behaviors and increased blood pressure.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🩺 Blood Pressure</h3>
+                <p>Enter your systolic blood pressure (the top number). Normal: below 120, Elevated: 120-129, High: 130 or higher.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>💓 Resting Heart Rate</h3>
+                <p>Your heart rate when at rest (typically 60-100 bpm). Athletes may have lower resting heart rates (40-60 bpm).</p>
+            </div>
+
+            <div class="info-card">
+                <h3>💢 Chest Pain</h3>
+                <p>Chest pain or discomfort can be a warning sign of heart problems. If you experience frequent chest pain, consult a healthcare provider.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>😮‍💨 Shortness of Breath</h3>
+                <p>Difficulty breathing, especially during light activities, can indicate heart or lung problems.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>👨‍👩‍👧‍👦 Family History</h3>
+                <p>A family history of heart disease, especially in close relatives at a young age, increases your risk significantly.</p>
+            </div>
+
+            <button class="close-button" onclick="window.location.href='/'">Back to Home</button>
+        </div>
+    </div>
+
+    <script>
+        function showInfo() {
+            alert('Heart Disease Information will be displayed here!');
+        }
+
+        function showProtect() {
+            alert('Protect Your Heart content will be displayed here!');
+        }
+    </script>
+</body>
+</html>
+

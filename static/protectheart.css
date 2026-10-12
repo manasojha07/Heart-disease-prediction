@@ -1,0 +1,304 @@
+/* Protect Your Heart Page Styling */
+
+body {
+    background: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #ff6b95 0%, #ff8fab 100%);
+    color: white;
+    padding: 100px 20px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 22px;
+    font-weight: 300;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 30px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #ffe6ed 0%, #fff5f5 100%);
+    border-radius: 15px;
+    padding: 35px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 15px rgba(255, 107, 149, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ffe6ed;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 107, 149, 0.2);
+    border-color: #ffb8cb;
+}
+
+.info-card h2 {
+    color: #ff6b95;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ffe6ed;
+}
+
+.info-card h3 {
+    color: #ff8fab;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Introduction Card */
+.intro-card {
+    background: linear-gradient(135deg, #ffe6ed 0%, #fff5f5 100%);
+    border-left: 4px solid #ff6b95;
+}
+
+.intro-card h2 {
+    color: #ff6b95;
+}
+
+/* Tips List */
+.tips-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.tips-list li {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.tips-list li::before {
+    content: "•";
+    color: #ff6b95;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+}
+
+.tips-list li strong {
+    color: #ff6b95;
+}
+
+/* Motivational Text */
+.motivational-text {
+    background: #ffe6ed;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 3px solid #ff6b95;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+/* Warning Card */
+.warning-card {
+    border: 2px solid #ff6b95;
+    background: #fff5f5;
+}
+
+.warning-card h2 {
+    color: #ff6b95;
+}
+
+.warning-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.warning-list li {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.warning-list li::before {
+    content: "⚠️";
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+}
+
+.warning-list li strong {
+    color: #ff6b95;
+}
+
+.emergency-note {
+    background: #ffcccc;
+    color: #cc0000;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 3px solid #cc0000;
+    font-weight: 500;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+/* Quote Card */
+.quote-card {
+    background: linear-gradient(135deg, #ff6b95 0%, #ff8fab 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 60px 35px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(255, 107, 149, 0.3);
+    position: relative;
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 40px rgba(255, 107, 149, 0.4);
+}
+
+.quote-card::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 120px;
+    opacity: 0.15;
+    font-family: Georgia, serif;
+}
+
+.quote-card::after {
+    content: '"';
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 120px;
+    opacity: 0.15;
+    font-family: Georgia, serif;
+}
+
+.quote-text {
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+.quote-author {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+/* Disclaimer Card */
+.disclaimer-card {
+    background: #fff5f5;
+    border-left: 4px solid #ff6b95;
+    border-radius: 10px;
+    padding: 25px 30px;
+    margin-top: 20px;
+}
+
+.disclaimer-text {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .info-card {
+        padding: 25px;
+    }
+    
+    .info-card h2 {
+        font-size: 24px;
+    }
+    
+    .quote-text {
+        font-size: 22px;
+    }
+}

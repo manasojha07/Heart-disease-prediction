@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='heartdisinfo.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="nav-button" onclick="window.location.href='/'">Home</button>
+            <button class="nav-button active">Heart Disease Information</button>
+            <button class="nav-button" onclick="window.location.href='/protect'">Protect Your Heart</button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="info-header">
+        <h1>Heart Disease Information</h1>
+        <p>Understanding common heart conditions, their causes, symptoms, and prevention</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="disease-container">
+        <!-- Disease 1: Coronary Artery Disease -->
+        <div class="disease-card">
+            <div class="disease-name">
+            <h2>🫀 Coronary Artery Disease (CAD)</h2>
+            </div>
+            <div class="disease-info">
+                <p>Coronary Artery Disease occurs when the blood vessels that supply blood to the heart muscle become <b>hardened and narrowed</b> due to plaque buildup. This is the most common type of heart disease and can lead to serious complications like heart attacks.</p>
+                <hr class="divider">
+                <h3>Causes & Risk Factors:</h3>
+                <ul>
+                    <li>High cholesterol levels</li>
+                    <li>High blood pressure</li>
+                    <li>Smoking and tobacco use</li>
+                    <li>Diabetes</li>
+                    <li>Sedentary lifestyle</li>
+                    <li>Family history of heart disease</li>
+                    <li>Age (men over 45, women over 55)</li>
+                </ul>
+
+                <hr class="divider">
+
+                <h3>Common Symptoms:</h3>
+                <ul>
+                    <li>Chest pain or discomfort (angina)</li>
+                    <li>Shortness of breath</li>
+                    <li>Fatigue and weakness</li>
+                    <li>Heart palpitations</li>
+                    <li>Dizziness or fainting</li>
+                </ul>
+
+                <hr class="divider">
+
+                <h3>Prevention Tips:</h3>
+                <ul>
+                    <li>Maintain a healthy diet low in saturated fats and cholesterol</li>
+                    <li>Engage in regular physical activity (at least 150 minutes per week)</li>
+                    <li>Quit smoking and avoid secondhand smoke</li>
+                </ul>
+
+                <div class="did-you-know">
+                    <strong>Did you know?</strong> CAD is responsible for about 1 in every 7 deaths in the United States.
+                </div>
+            </div>
+        </div>
+
+        <!-- Disease 2: Heart Attack -->
+        <div class="disease-card">
+            <div class="disease-name">
+            <h2>💔 Heart Attack (Myocardial Infarction)</h2>
+            </div>
+            <div class="disease-info">
+                <p>A heart attack occurs when blood flow to the heart is blocked, usually by a <b>blood clot</b>. Without oxygen-rich blood, the heart muscle begins to die. This is a life-threatening medical emergency requiring immediate treatment.</p>
+                <hr class="divider">
+                <h3>Causes & Risk Factors:</h3>
+                <ul>
+                    <li>Coronary artery disease</li>
+                    <li>Blood clots</li>
+                    <li>Coronary artery spasm</li>
+                    <li>High blood pressure</li>
+                    <li>Obesity</li>
+                    <li>Excessive alcohol consumption</li>
+                    <li>Physical inactivity</li>
+                </ul>
+                <hr class="divider">
+                <h3>Common Symptoms:</h3>
+                <ul>
+                    <li>Chest pain or pressure (feeling of squeezing or fullness)</li>
+                    <li>Pain in arm, shoulder, neck, jaw, or back</li>
+                    <li>Shortness of breath</li>
+                    <li>Nausea, vomiting, or dizziness</li>
+                    <li>Cold sweat</li>
+                </ul>
+                <hr class="divider">
+                <h3>Prevention Tips:</h3>
+                <ul>
+                    <li>Manage underlying conditions like diabetes and high blood pressure</li>
+                    <li>Learn to manage stress effectively through meditation or therapy</li>
+                    <li>Recognize warning signs and call emergency services immediately</li>
+                </ul>
+
+                <div class="did-you-know">
+                    <strong>Did you know?</strong> Early treatment (within 1 hour of symptoms) significantly improves survival chances.
+                </div>
+            </div>
+        </div>
+
+        <!-- Disease 3: Heart Failure -->
+        <div class="disease-card">
+            <div class="disease-name">
+            <h2>⚡ Heart Failure</h2>
+            </div>
+            <div class="disease-info">
+                <p>Heart failure doesn't mean the heart has stopped beating. It means the heart is unable to pump blood as efficiently as it should, leading to fluid buildup and reduced oxygen delivery to the body's tissues.</p>
+                <hr class="divider">
+                <h3>Causes & Risk Factors:</h3>
+                <ul>
+                    <li>Coronary artery disease</li>
+                    <li>Previous heart attack</li>
+                    <li>High blood pressure</li>
+                    <li>Heart valve problems</li>
+                    <li>Cardiomyopathy</li>
+                    <li>Diabetes</li>
+                    <li>Thyroid disorders</li>
+                </ul>
+                <hr class="divider">
+                <h3>Common Symptoms:</h3>
+                <ul>
+                    <li>Shortness of breath (especially when lying down)</li>
+                    <li>Persistent cough or wheezing</li>
+                    <li>Swelling in legs, ankles, or abdomen</li>
+                    <li>Fatigue and weakness</li>
+                    <li>Rapid or irregular heartbeat</li>
+                </ul>
+                <hr class="divider">
+                <h3>Prevention Tips:</h3>
+                <ul>
+                    <li>Monitor and control blood pressure regularly</li>
+                    <li>Follow a low-sodium diet to reduce fluid retention</li>
+                </ul>
+
+                <div class="did-you-know">
+                    <strong>Did you know?</strong> About 6.2 million adults in the US have heart failure, but lifestyle changes can help manage it.
+                </div>
+            </div>
+        </div>
+
+        <!-- Disease 4: Arrhythmia -->
+        <div class="disease-card">
+            <div class="disease-name">
+            <h2>📊 Arrhythmia</h2>
+            </div>
+            <div class="disease-info">
+                <p>Arrhythmia refers to abnormal heart rhythms - when the heart beats too fast, too slow, or irregularly. While some arrhythmias are harmless, others can be serious and potentially life-threatening.</p>
+                <hr class="divider">
+                <h3>Causes & Risk Factors:</h3>
+                <ul>
+                    <li>Heart disease and previous heart attacks</li>
+                    <li>High blood pressure</li>
+                    <li>Thyroid problems</li>
+                    <li>Excessive caffeine or alcohol</li>
+                    <li>Stress and anxiety</li>
+                    <li>Certain medications</li>
+                    <li>Congenital heart defects</li>
+                </ul>
+                <hr class="divider">
+                <h3>Common Symptoms:</h3>
+                <ul>
+                    <li>Palpitations (feeling of skipped beats)</li>
+                    <li>Dizziness or lightheadedness</li>
+                    <li>Shortness of breath</li>
+                    <li>Chest discomfort</li>
+                    <li>Fatigue or weakness</li>
+                </ul>
+                <hr class="divider">
+                <h3>Prevention Tips:</h3>
+                <ul>
+                    <li>Limit caffeine and alcohol intake</li>
+                    <li>Practice stress management techniques like yoga or deep breathing</li>
+                </ul>
+
+                <div class="did-you-know">
+                    <strong>Did you know?</strong> Atrial fibrillation, a common arrhythmia, affects millions of people and increases stroke risk five-fold.
+                </div>
+            </div>
+        </div>
+
+        <!-- Disease 5: Cardiomyopathy -->
+        <div class="disease-card">
+            <div class="disease-name">
+            <h2>🫁 Cardiomyopathy</h2>
+            </div>
+            <div class="disease-info">
+                <p>Cardiomyopathy is a disease of the heart muscle that makes it harder for the heart to pump blood to the rest of the body. The heart muscle becomes enlarged, thickened, or rigid, affecting its ability to function properly.</p>
+                <hr class="divider">
+                <h3>Causes & Risk Factors:</h3>
+                <ul>
+                    <li>Genetic predisposition</li>
+                    <li>Long-term high blood pressure</li>
+                    <li>Heart valve problems</li>
+                    <li>Excessive alcohol consumption</li>
+                    <li>Certain viral infections</li>
+                    <li>Chemotherapy and radiation therapy</li>
+                    <li>Pregnancy complications</li>
+                </ul>
+                <hr class="divider">
+                <h3>Common Symptoms:</h3>
+                <ul>
+                    <li>Shortness of breath</li>
+                    <li>Swelling in legs, ankles, and feet</li>
+                    <li>Fatigue</li>
+                    <li>Irregular heartbeats</li>
+                    <li>Dizziness or fainting</li>
+                    <li>Chest pain</li>
+                </ul>
+                <hr class="divider">
+                <h3>Prevention Tips:</h3>
+                <ul>
+                    <li>If it runs in your family, get regular heart screenings</li>
+                    <li>Avoid excessive alcohol consumption</li>
+                </ul>
+
+                <div class="did-you-know">
+                    <strong>Did you know?</strong> Some types of cardiomyopathy can be asymptomatic in early stages and only discovered during routine testing.
+                </div>
+            </div>
+        </div>
+
+        <!-- Disease 6: Congenital Heart Disease -->
+        <div class="disease-card">
+            <div class="disease-name">
+            <h2>❤️ Congenital Heart Disease</h2>
+            </div>
+            <div class="disease-info">
+                <p>Congenital heart disease refers to heart defects present at birth that can affect the heart's structure and function. These can range from simple defects with no symptoms to complex, life-threatening conditions requiring immediate treatment.</p>
+                <hr class="divider">
+                <h3>Causes & Risk Factors:</h3>
+                <ul>
+                    <li>Genetic factors and family history</li>
+                    <li>Maternal infections during pregnancy (rubella, diabetes)</li>
+                    <li>Medications taken during pregnancy</li>
+                    <li>Maternal alcohol or drug abuse</li>
+                    <li>Chromosomal abnormalities</li>
+                    <li>Environmental factors</li>
+                </ul>
+                <hr class="divider">
+                <h3>Common Symptoms:</h3>
+                <ul>
+                    <li>Rapid breathing or shortness of breath</li>
+                    <li>Poor feeding (in infants)</li>
+                    <li>Bluish tint to skin, lips, or fingernails</li>
+                    <li>Fatigue with minimal activity</li>
+                    <li>Heart murmurs</li>
+                </ul>
+                <hr class="divider">
+                <h3>Prevention Tips:</h3>
+                <ul>
+                    <li>Get proper prenatal care during pregnancy</li>
+                    <li>Avoid known risk factors during pregnancy like alcohol, smoking, and certain medications</li>
+                </ul>
+
+                <div class="did-you-know">
+                    <strong>Did you know?</strong> About 1 in 100 babies are born with a congenital heart defect, making it the most common birth defect.
+                </div>
+            </div>
+        </div>
+
+        <!-- Disease 7: Valvular Heart Disease -->
+        <div class="disease-card">
+            <div class="disease-name">
+            <h2>🔒 Valvular Heart Disease</h2>
+            </div>
+            <div class="disease-info">
+                <p>Valvular heart disease occurs when one or more of the heart's four valves don't work properly, either not opening enough (stenosis) or not closing tightly (regurgitation). This disrupts blood flow through the heart.</p>
+                <hr class="divider">
+                <h3>Causes & Risk Factors:</h3>
+                <ul>
+                    <li>Aging and wear over time</li>
+                    <li>Rheumatic fever</li>
+                    <li>Endocarditis (heart valve infection)</li>
+                    <li>Congenital valve defects</li>
+                    <li>Coronary artery disease</li>
+                    <li>High blood pressure</li>
+                    <li>Connective tissue disorders</li>
+                </ul>
+                <hr class="divider">
+                <h3>Common Symptoms:</h3>
+                <ul>
+                    <li>Shortness of breath</li>
+                    <li>Chest pain</li>
+                    <li>Fatigue or weakness</li>
+                    <li>Heart palpitations</li>
+                    <li>Swelling in ankles or feet</li>
+                    <li>Dizziness or fainting</li>
+                </ul>
+                <hr class="divider">
+                <h3>Prevention Tips:</h3>
+                <ul>
+                    <li>Practice good dental hygiene to prevent endocarditis</li>
+                    <li>Treat strep throat promptly to prevent rheumatic fever</li>
+                </ul>
+
+                <div class="did-you-know">
+                    <strong>Did you know?</strong> Modern valve repair or replacement surgeries have high success rates and can dramatically improve quality of life.
+                </div>
+            </div>
+        </div>
+
+        <!-- Disease 8: Pericarditis -->
+        <div class="disease-card">
+            <div class="disease-name">
+            <h2>🌊 Pericarditis</h2>
+            </div>
+            <div class="disease-info">
+                <p>Pericarditis is inflammation of the pericardium, the thin sac-like membrane surrounding the heart. When irritated, this lining can swell and cause chest pain that may be sharp or stabbing, often worsening when lying down.</p>
+                <hr class="divider">
+                <h3>Causes & Risk Factors:</h3>
+                <ul>
+                    <li>Viral infections (most common)</li>
+                    <li>Autoimmune disorders</li>
+                    <li>Previous heart attack or heart surgery</li>
+                    <li>Kidney failure</li>
+                    <li>Certain medications</li>
+                    <li>Chest trauma or injury</li>
+                    <li>Cancer or radiation therapy</li>
+                </ul>
+                <hr class="divider">
+                <h3>Common Symptoms:</h3>
+                <ul>
+                    <li>Sharp, stabbing chest pain (worse when lying down)</li>
+                    <li>Shortness of breath</li>
+                    <li>Fever</li>
+                    <li>Palpitations</li>
+                    <li>Dry cough</li>
+                    <li>Leg swelling (in severe cases)</li>
+                </ul>
+                <hr class="divider">
+                <h3>Prevention Tips:</h3>
+                <ul>
+                    <li>Seek prompt treatment for infections</li>
+                    <li>Follow recovery instructions carefully after heart surgery</li>
+                </ul>
+
+                <div class="did-you-know">
+                    <strong>Did you know?</strong> Most cases of pericarditis are mild and resolve with treatment, but early diagnosis is important to prevent complications.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+        <h3>⚠️ Disclaimer</h3>
+        <p>This information is for educational purposes only and not a substitute for medical advice. If you experience any symptoms or have concerns about your heart health, please consult with a qualified healthcare professional for proper diagnosis and treatment.</p>
+    </div>
+
+</body>
+</html>
+
